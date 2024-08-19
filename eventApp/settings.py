@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'authApp'
 ]
 
 SIMPLE_JWT = {
@@ -76,6 +77,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'authApp.User'
+
 ROOT_URLCONF = 'eventApp.urls'
 
 TEMPLATES = [
@@ -103,10 +106,10 @@ WSGI_APPLICATION = 'eventApp.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': getenv('PGDATABASE'),
-    'USER': getenv('PGUSER'),
-    'PASSWORD': getenv('PGPASSWORD'),
-    'HOST': getenv('PGHOST'),
+    'NAME': getenv('PGDATABASE', 'eventdb'),
+    'USER': getenv('PGUSER', 'eventdb_owner'),
+    'PASSWORD': getenv('PGPASSWORD', 'z6pfC1jDxJPO'),
+    'HOST': getenv('PGHOST', 'ep-tight-rice-a5o1noq3.us-east-2.aws.neon.tech'),
     'PORT': getenv('PGPORT', 5432),
     'OPTIONS': {
       'sslmode': 'require',

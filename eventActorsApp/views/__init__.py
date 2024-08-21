@@ -1,0 +1,2 @@
+from .organizatorViews import OrganizatorCreateListView
+from .organizatorViews import OrganizatorDetailView

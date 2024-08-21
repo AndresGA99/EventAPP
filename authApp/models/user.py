@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.contrib.auth.hashers import make_password
 
+from securityApp.models import Role
+
 import uuid
 
 
@@ -29,6 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('email', max_length=254, unique=True)
     password = models.CharField('password', max_length=256)
     is_active = models.BooleanField(default=True)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE, null=False)
     
     
     def save(self, **kwargs):

@@ -18,10 +18,15 @@ Including another URLconf
 from django.urls import path
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 from authApp import views as auth_views
+from securityApp import views as security_views
+from eventActorsApp import views as event_actors_views
 
 
 urlpatterns = [
     path('login/', TokenObtainPairView.as_view()),
     path('refresh/', TokenRefreshView.as_view()),
     path('register/', auth_views.UserCreateView.as_view()),
+    path('roles/', security_views.RoleListView.as_view()),
+    path('organizators/', event_actors_views.OrganizatorCreateListView.as_view()),
+    path('organizators/<str:pk>/', event_actors_views.OrganizatorDetailView.as_view()),
 ]

@@ -1,1 +1,2 @@
 from .organizatorSerializer import OrganizatorSerializer
+from .attenderSerializer import AttenderSerializer

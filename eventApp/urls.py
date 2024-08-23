@@ -29,4 +29,6 @@ urlpatterns = [
     path('roles/', security_views.RoleListView.as_view()),
     path('organizators/', event_actors_views.OrganizatorCreateListView.as_view()),
     path('organizators/<str:pk>/', event_actors_views.OrganizatorDetailView.as_view()),
+    path('attenders/', event_actors_views.AttenderCreateListView.as_view()),
+    path('attenders/<str:pk>/', event_actors_views.AttenderDetailView.as_view()),
 ]

@@ -1,2 +1,2 @@
-from .organizatorViews import OrganizatorCreateListView
-from .organizatorViews import OrganizatorDetailView
+from .organizatorViews import OrganizatorCreateListView, OrganizatorDetailView
+from .attenderViews import AttenderCreateListView, AttenderDetailView

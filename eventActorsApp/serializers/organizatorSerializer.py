@@ -36,3 +36,4 @@ class OrganizatorSerializer(serializers.ModelSerializer):
             representation.pop('user', None)
 
         return representation
+    

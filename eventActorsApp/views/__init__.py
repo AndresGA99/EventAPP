@@ -1,2 +1,4 @@
 from .organizatorViews import OrganizatorCreateListView, OrganizatorDetailView
 from .attenderViews import AttenderCreateListView, AttenderDetailView
+from .fillCitiesView import FillCitiesView
+from .speakerViews import SpeakerCreateListView, SpeakerDetailView

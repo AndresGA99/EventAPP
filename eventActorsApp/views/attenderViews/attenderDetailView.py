@@ -4,9 +4,9 @@ from django.utils.decorators import method_decorator
 from rest_framework.permissions import IsAuthenticated
 from django.conf import settings
 
-from securityApp.decorators import is_granted
+from decorators.security import is_granted
 from authApp.models import User
-from authApp.utils import request_decode_token, get_user_role_by_user_id
+from utils.authUtils import request_decode_token, get_user_role_by_user_id
 from eventActorsApp.models import Attender
 from eventActorsApp.serializers import AttenderSerializer
 

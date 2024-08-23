@@ -5,7 +5,7 @@ from django.conf import settings
 
 from securityApp.models import Role
 from securityApp.serializers import RoleSerializer
-from securityApp.decorators import is_granted
+from decorators.security import is_granted
 
 
 class RoleListView(generics.ListAPIView):

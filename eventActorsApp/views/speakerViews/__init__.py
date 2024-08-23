@@ -1,0 +1,2 @@
+from .speakerDetailView import SpeakerDetailView
+from .speakerCreateListView import SpeakerCreateListView

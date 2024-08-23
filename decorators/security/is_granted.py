@@ -1,7 +1,7 @@
 from functools import wraps
 from django.core.exceptions import PermissionDenied
 
-from authApp.utils import request_decode_token
+from utils import request_decode_token
 from authApp.models import User
 
 

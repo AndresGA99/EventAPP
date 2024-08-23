@@ -1,2 +1,4 @@
 from .organizatorSerializer import OrganizatorSerializer
 from .attenderSerializer import AttenderSerializer
+from .citySerializer import CitySerializer
+from .speakerSerializer import SpeakerSerializer

@@ -31,4 +31,7 @@ urlpatterns = [
     path('organizators/<str:pk>/', event_actors_views.OrganizatorDetailView.as_view()),
     path('attenders/', event_actors_views.AttenderCreateListView.as_view()),
     path('attenders/<str:pk>/', event_actors_views.AttenderDetailView.as_view()),
+    path('cities/', event_actors_views.FillCitiesView.as_view()),
+    path('speakers/', event_actors_views.SpeakerCreateListView.as_view()),
+    path('speakers/<str:pk>/', event_actors_views.SpeakerDetailView.as_view()),
 ]

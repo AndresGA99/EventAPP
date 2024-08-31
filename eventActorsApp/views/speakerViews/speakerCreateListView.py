@@ -17,8 +17,12 @@ class SpeakerCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, )
     pagination_class = DefaultPaginator
 
-
+    @method_decorator(is_granted(settings.ROLE_NAMES['ADMIN'], settings.ROLE_NAMES['ORGANIZATOR']))
     def get(self, request, *args, **kwargs):
+        user = user.request.user
+        if user.role.name == settings.ROLE_NAMES['ORGANIZATOR']:
+            organizator = organizator.objects.get(user=user)
+            self.queryset = self.queryset.filter(organization=organizator.id)
         return self.list(request, *args, **kwargs)
 
     @method_decorator(is_granted(settings.ROLE_NAMES['ORGANIZATOR']))
